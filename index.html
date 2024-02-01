@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voronoi fingerprint</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: #1b1b1b;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+  <script src="p5.min.js"></script>
+  <script src="c2.min.js"></script>
+  <script src="https://unpkg.com/mathjs@12.3.0/lib/browser/math.js"></script>
+  <script src="sketch.js"></script>
+  <!-- <script src="../addons/p5.sound.js"></script> -->
+</head>
+
+<body>
+
+  <main>
+    <h1>Veronoi fingerprint</h1>
+    <canvas id="canvas"></canvas>
+    <div class="settings">
+      <label for="background color">Background color</label>
+      <select name="background color" id="background-color">
+        <option value="white">White</option>
+        <option value="grey">Gray</option>
+        <option value="black">Black</option>
+      </select>
+      <label for="Number of points">Number of points</label>
+      <input type="range" id="num-points" name="Number of points" min="10" max="1000" value="500"
+        oninput="this.nextElementSibling.value = this.value" />
+      <output>500</output>
+      <input type="button" id="save" value="Save">
+      <input type="file" name="img-loader" id="img-loader" size="24" onchange="load_new_img(event)" alt=""/>
+    </div>
+  </main>
+
+</body>
+
+</html>
